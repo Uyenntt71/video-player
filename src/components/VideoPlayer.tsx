@@ -5,9 +5,6 @@ import { Box } from '@chakra-ui/react';
 import React, { useEffect, useRef } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
-import 'videojs-hls-quality-selector';
-import 'videojs-hls-quality-selector/dist/videojs-hls-quality-selector.css';
-import 'videojs-contrib-quality-levels';
 
 const VideoPlayer = ({
   videoSource,
@@ -25,11 +22,11 @@ const VideoPlayer = ({
       preload: 'auto',
       fluid: true,
       html5: {
-        vhs: {
-          withCredentials: true,
-        },
-        nativeAudioTracks: false,
-        nativeVideoTracks: false,
+        // vhs: {
+        //   withCredentials: true,
+        // },
+        // nativeAudioTracks: false,
+        // nativeVideoTracks: false,
       },
     });
 

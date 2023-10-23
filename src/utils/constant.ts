@@ -22,11 +22,9 @@ export const VOD_OPTIONS: Array<VodData> = [
   },
   {
     key: 3,
-    name: 'Redundant levels with subtitle and audio track groups',
-    hlsUrl:
-      'https://playertest.longtailvideo.com/adaptive/elephants_dream_v4/redundant.m3u8',
-    hlsllUrl:
-      'https://playertest.longtailvideo.com/adaptive/elephants_dream_v4/redundant.m3u8',
+    name: 'Big Buck Bunny - adaptive qualities',
+    hlsUrl: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
+    hlsllUrl: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8',
   },
 ];
 
