@@ -12,20 +12,31 @@
     "@chakra-ui/next-js": "^2.1.5",
     "@chakra-ui/react": "^2.8.1",
     "@fontsource/roboto": "^5.0.8",
+    "@videojs/http-streaming": "^2.16.2",
     "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18",
-    "registry.npmjs.org": "^1.0.1"
+    "registry.npmjs.org": "^1.0.1",
+    "video.js": "^8.6.0",
+    "videojs-contrib-hls": "^5.15.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/videojs-hls-quality-selector": "^1.1.2",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "13.5.6",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.33.2",
     "postcss": "^8",
+    "prettier": "3.0.3",
     "tailwindcss": "^3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "videojs-contrib-quality-levels": "^4.0.0",
+    "videojs-hls-quality-selector": "^1.1.4"
   }
 }
