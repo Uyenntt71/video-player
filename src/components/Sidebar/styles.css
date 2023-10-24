@@ -1,0 +1,113 @@
+.has-subnav .sub-menu {
+    display: flex;
+    float: left;
+    position: absolute;
+    z-index: 9999;
+    margin-left: 0px;
+    margin-bottom: var(--chakra-sizes-1);
+}
+
+.has-subnav {
+    transition: all 0.2s;
+    position: relative;
+
+    width: var(--chakra-sizes-14);
+    margin-left: 0px;
+}
+
+.menu-icon-box {
+    width: 46px;
+    height: 46px;
+}
+
+.menu-icon {
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.sub-menu {
+    float: left;
+    position: fixed;
+    top: 0;
+    left: var(--chakra-sizes-14);
+    width: 250px;
+    z-index: 1000;
+    background: #111825;
+    color: white;
+    align-items: self-start;
+}
+
+.menu-name {
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    min-height: 40px;
+    padding: 10px;
+    vertical-align: middle;
+    cursor: default;
+    background-color: #404650;
+    width: 100%;
+    text-align: center;
+}
+
+.menu-list {
+    background: #111825;
+    max-height: 300px;
+    margin-bottom: var(--chakra-sizes-3) !important;
+    margin-top: var(--chakra-sizes-3) !important;
+    width: 100%;
+}
+
+.menu-item {
+    margin-left: var(--chakra-sizes-1);
+    margin-right: var(--chakra-sizes-1);
+}
+
+.isSubMenuOpen {
+    padding-left: var(--chakra-sizes-1);
+    padding-right: var(--chakra-sizes-1);
+    background-color: #333c4a;
+}
+
+.isActiveLink {
+    background-color: #333c4a;
+    width: 100%;
+}
+
+.menuBox {
+    width: 100%;
+}
+
+.chakra-collapse {
+    margin-top: 0px !important;
+    padding-left: var(--chakra-sizes-3);
+}
+
+.disableLink {
+    cursor: default;
+    color: white;
+    opacity: 0.5;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ul {
+    margin-top: 0px !important;
+}

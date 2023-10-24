@@ -14,7 +14,7 @@ import { ChevronDownIcon, ChevronUpIcon } from '@chakra-ui/icons';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import './index.css';
+import './styles.css';
 import { usePathname } from 'next/navigation';
 
 const SPACE_2 = 'var(--chakra-space-2)';

@@ -18,13 +18,16 @@
     "react": "^18",
     "react-dom": "^18",
     "registry.npmjs.org": "^1.0.1",
-    "video.js": "^8.6.0",
-    "videojs-contrib-hls": "^5.15.0"
+    "video.js": "^7.21.3",
+    "videojs-contrib-quality-levels": "^3.0.0",
+    "videojs-http-source-selector": "^1.1.6"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18",
+    "@types/video.js": "^7.3.55",
+    "@types/videojs-contrib-quality-levels": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",
     "autoprefixer": "^10",

@@ -1,0 +1,29 @@
+.App {
+    display: flex;
+}
+
+.video-js .vjs-tech {
+    position: relative !important;
+}
+
+.vjs-fluid {
+    height: auto !important;
+    padding-top: 0 !important;
+}
+
+.vjs-wrapper {
+    width: 100%;
+}
+
+video {
+    object-fit: cover !important;
+    /* max-width: 900px; */
+    /* Whatever you want to limit width to */
+    /* max-height: 1000px; */
+    /* Whatever you want to limit height to */
+}
+
+video-js {
+    width: 100%;
+    display: inline !important;
+}
