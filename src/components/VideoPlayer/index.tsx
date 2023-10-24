@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 import 'videojs-contrib-quality-levels';
-import 'videojs-http-source-selector';
+import 'videojs-hls-quality-selector';
 import './styles.css';
 
 const VideoPlayer = ({
@@ -40,7 +40,9 @@ const VideoPlayer = ({
             fullscreenToggle: true,
           },
           plugins: {
-            httpSourceSelector: { default: 'low' },
+            hlsQualitySelector: {
+              displayCurrentQuality: true,
+            },
           },
           sources: [
             {
