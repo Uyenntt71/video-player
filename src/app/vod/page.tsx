@@ -25,8 +25,9 @@ export default function Vod() {
         <Grid border={'md'} templateRows={`repeat(20, 1fr)`} w="full" h="100vh">
           <GridItem
             rowSpan={1}
-            display={'flex'}
+            display={'block'}
             justifyContent={'center'}
+            justifySelf={'center'}
             margin={4}
             width={'50%'}
           >
@@ -73,7 +74,7 @@ export default function Vod() {
             margin={4}
           >
             <Box
-              maxW={'var(--chakra-sizes-container-lg)'}
+              maxW={'var(--chakra-sizes-container-xl)'}
               maxH={'var(--chakra-sizes-container-sm)'}
               w={'full'}
               h={'full'}

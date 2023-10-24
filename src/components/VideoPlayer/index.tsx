@@ -56,6 +56,13 @@ const VideoPlayer = ({
         }
       );
       playerRef.current = player;
+    } else {
+      const videoElement = document.getElementsByClassName('video-js')?.[0];
+      const player = videojs(videoElement);
+      player.src({
+        src: videoSource,
+        type: type,
+      });
     }
   }, [videoSource, videoRef]);
 

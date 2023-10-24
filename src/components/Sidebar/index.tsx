@@ -44,7 +44,7 @@ interface SubMenuProps {
 }
 
 const SubMenu = ({ menuItem, selectedItems }: SubMenuProps) => {
-  const { name, link, subItems, paddingLeft, key, opacity } = menuItem;
+  const { name, link, subItems, paddingLeft, key, opacity, icon } = menuItem;
 
   const [isSubMenuOpen, setSubMenuOpen] = useState(false);
 
@@ -72,6 +72,11 @@ const SubMenu = ({ menuItem, selectedItems }: SubMenuProps) => {
             backgroundColor: backgroundColor,
           }}
         >
+          <Box marginRight={'0.1rem'} display={{ base: 'none', md: 'block' }}>
+            {icon && (
+              <Image src={icon} alt="Logo" width={20} height={20} priority />
+            )}
+          </Box>
           {link ? (
             <Link href={link} key={name}>
               <Text className="menu-item" id={key.toString()}>
@@ -120,7 +125,7 @@ export default function Sidebar({ onOpen, isOpen, ...rest }: SidebarProps) {
     {
       key: 1,
       name: 'Video on demand',
-      icon: '/icons/nav_ic_1.png',
+      icon: '/vod_ic.png',
       subItems: [],
       link: `/vod`,
       paddingLeft: SPACE_6,
@@ -129,7 +134,7 @@ export default function Sidebar({ onOpen, isOpen, ...rest }: SidebarProps) {
     {
       key: 2,
       name: 'Streaming',
-      icon: '/icons/config_ic.png',
+      icon: '/streaming_ic.png',
       paddingLeft: SPACE_6,
       opacity: 1,
       subItems: [],
@@ -196,13 +201,12 @@ export default function Sidebar({ onOpen, isOpen, ...rest }: SidebarProps) {
           flexDirection={'row'}
         >
           <Image
-            src="/logo.png"
+            src="/logo2.svg"
             alt="Video player Logo"
-            width={50}
+            width={180}
             height={50}
             priority
           />
-          Video Player
         </Flex>
         <Box className="menuBox">
           {menuItems.map((item: LinkItemProps, index: number) => {

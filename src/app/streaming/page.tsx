@@ -6,16 +6,13 @@ import { Box, Grid, GridItem, Select } from '@chakra-ui/react';
 import { useState } from 'react';
 
 export default function Streaming() {
-  const [selectedUrl, setSelectedUrl] = useState<string>(VOD_OPTIONS[0].hlsUrl);
   const [isLowLatency, setIsLowLatency] = useState<boolean>(false);
-
+  const HLS_URL =
+    'https://stream.mux.com/v69RSHhFelSm4701snP22dYz2jICy4E4FUyk02rW4gxRM.m3u8';
+  const HLS_LL_URL =
+    'https://stream.mux.com/v69RSHhFelSm4701snP22dYz2jICy4E4FUyk02rW4gxRM.m3u8';
   const handleSetHlsType = (hlsType: string) => {
     setIsLowLatency(hlsType === 'hlsll');
-  };
-
-  const handleSetUrl = (key: number) => {
-    const selectedVod = VOD_OPTIONS.filter((item) => item.key == key)?.[0];
-    setSelectedUrl(isLowLatency ? selectedVod?.hlsllUrl : selectedVod?.hlsUrl);
   };
 
   return (
@@ -25,12 +22,26 @@ export default function Streaming() {
         <Grid border={'md'} templateRows={`repeat(20, 1fr)`} w="full" h="100vh">
           <GridItem
             rowSpan={1}
-            display={'flex'}
+            display={'block'}
             justifyContent={'center'}
+            justifySelf={'center'}
             margin={4}
             width={'50%'}
+            shadow={'md'}
           >
-            This is sample of streaming video
+            <Select
+              // placeholder="Select HLS Type"
+              onChange={(e: any) => handleSetHlsType(e.target.value)}
+              defaultValue={HLS_TYPES[0].key}
+            >
+              {HLS_TYPES.map((item) => {
+                return (
+                  <option value={item.key} key={item.key}>
+                    {item.value}
+                  </option>
+                );
+              })}
+            </Select>
           </GridItem>
           <GridItem
             rowSpan={19}
@@ -48,9 +59,7 @@ export default function Streaming() {
               h={'full'}
             >
               <VideoPlayer
-                videoSource={
-                  'https://stream.mux.com/v69RSHhFelSm4701snP22dYz2jICy4E4FUyk02rW4gxRM.m3u8'
-                }
+                videoSource={isLowLatency ? HLS_LL_URL : HLS_URL}
                 type={SOURCE_TYPES.MPEGURL}
               />
             </Box>
