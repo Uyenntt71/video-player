@@ -1,8 +1,8 @@
 'use client';
 
 import VideoPlayer from '@/components/VideoPlayer';
-import { HLS_TYPES, SOURCE_TYPES, VOD_OPTIONS } from '@/utils/constant';
-import { Box, Grid, GridItem, Select } from '@chakra-ui/react';
+import { SOURCE_TYPES } from '@/utils/constant';
+import { Box, Grid, GridItem, HStack, Switch } from '@chakra-ui/react';
 import { useState } from 'react';
 
 export default function Streaming() {
@@ -11,8 +11,8 @@ export default function Streaming() {
     'https://stream.mux.com/v69RSHhFelSm4701snP22dYz2jICy4E4FUyk02rW4gxRM.m3u8';
   const HLS_LL_URL =
     'https://stream.mux.com/v69RSHhFelSm4701snP22dYz2jICy4E4FUyk02rW4gxRM.m3u8';
-  const handleSetHlsType = (hlsType: string) => {
-    setIsLowLatency(hlsType === 'hlsll');
+  const handleSetHlsType = (hlsType: boolean) => {
+    setIsLowLatency(hlsType);
   };
 
   return (
@@ -24,24 +24,17 @@ export default function Streaming() {
             rowSpan={1}
             display={'block'}
             justifyContent={'center'}
-            justifySelf={'center'}
+            justifySelf={'flex-start'}
             margin={4}
             width={'50%'}
-            shadow={'md'}
           >
-            <Select
-              // placeholder="Select HLS Type"
-              onChange={(e: any) => handleSetHlsType(e.target.value)}
-              defaultValue={HLS_TYPES[0].key}
-            >
-              {HLS_TYPES.map((item) => {
-                return (
-                  <option value={item.key} key={item.key}>
-                    {item.value}
-                  </option>
-                );
-              })}
-            </Select>
+            <HStack>
+              <Box>HLS Low Latency</Box>
+              <Switch
+                id="isHLSLL"
+                onChange={(e) => handleSetHlsType(e.target.checked)}
+              />
+            </HStack>
           </GridItem>
           <GridItem
             rowSpan={19}
@@ -61,6 +54,7 @@ export default function Streaming() {
               <VideoPlayer
                 videoSource={isLowLatency ? HLS_LL_URL : HLS_URL}
                 type={SOURCE_TYPES.MPEGURL}
+                poster={'/poster/big_buck_bunny.jpg'}
               />
             </Box>
           </GridItem>

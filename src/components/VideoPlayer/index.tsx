@@ -11,9 +11,11 @@ import './styles.css';
 const VideoPlayer = ({
   videoSource,
   type,
+  poster,
 }: {
   videoSource: string;
   type: SOURCE_TYPES;
+  poster: string;
 }) => {
   const videoRef = useRef<any>(null);
   const playerRef = useRef<any>(null);
