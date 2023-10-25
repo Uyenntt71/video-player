@@ -61,6 +61,7 @@ const VideoPlayer = ({
     } else {
       const videoElement = document.getElementsByClassName('video-js')?.[0];
       const player = videojs(videoElement);
+      player.poster(poster);
       player.src({
         src: videoSource,
         type: type,

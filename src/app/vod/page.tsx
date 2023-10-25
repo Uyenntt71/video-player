@@ -24,7 +24,7 @@ export default function Vod() {
     <>
       <title>Video-on-demand player</title>
       <Box p="5" h="100vh" w="100%" overflowY={'auto'}>
-        <Wrap>
+        <Wrap spacing={5}>
           {VOD_OPTIONS.map((video: VodData, index: number) => {
             return (
               <WrapItem key={index}>

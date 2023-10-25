@@ -14,7 +14,7 @@ const VideoView = ({
     <Grid
       w="full"
       h="full"
-      gridTemplateRows={'1fr 0.1fr'}
+      gridTemplateRows={'0.9fr 1fr'}
       onClick={handleClick}
       cursor={'pointer'}
       _hover={{
@@ -35,6 +35,7 @@ const VideoView = ({
               width: '100%',
               height: 'auto',
               maxHeight: '100%',
+              borderRadius: '5px',
             }}
           />
         </Box>
